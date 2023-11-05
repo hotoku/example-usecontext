@@ -7,7 +7,16 @@ function App() {
 
   return (
     <>
-      <div>{user ? user.name : <SignIn />}</div>
+      <div>{user ? user.name : <SignIn setUser={setUser} />}</div>
+      <div>
+        <button
+          onClick={() => {
+            setUser(null);
+          }}
+        >
+          sign out
+        </button>
+      </div>
     </>
   );
 }

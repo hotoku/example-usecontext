@@ -9,13 +9,13 @@ async function signIn(id: string, password: string): Promise<User> {
   };
 }
 
-function SignIn(): JSX.Element {
+function SignIn({ setUser }: { setUser: (user: User) => void }): JSX.Element {
   return (
     <div>
       <button
         onClick={() => {
           signIn("test", "test pw").then((user) => {
-            console.log(user);
+            setUser(user);
           });
         }}
       >

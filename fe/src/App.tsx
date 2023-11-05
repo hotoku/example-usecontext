@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { User } from "./types/user";
 import SignIn from "./components/SignIn";
+import { getAuth } from "firebase/auth";
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -12,6 +13,7 @@ function App() {
         <button
           onClick={() => {
             setUser(null);
+            getAuth().signOut();
           }}
         >
           sign out

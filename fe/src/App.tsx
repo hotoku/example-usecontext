@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { User } from "./types/user";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [user, setUser] = useState<User | null>(null);
 
   return (
     <>
-      <div>a</div>
+      <div>{user ? user.name : "no user"}</div>
     </>
   );
 }
